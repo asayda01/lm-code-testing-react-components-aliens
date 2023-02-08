@@ -2,7 +2,7 @@ interface interfaceWhatIs2Plus2Props {
 
     whatIs2Plus2:string;
     
-    onChangeWhatIs2Plus2:(event:React.ChangeEvent<HTMLInputElement>)=>void;
+    onChangeWhatIs2Plus2:(event:React.ChangeEvent<HTMLSelectElement>)=>void;
 
 }
 
@@ -10,9 +10,15 @@ const WhatIs2Plus2 : React.FC<interfaceWhatIs2Plus2Props> = ({whatIs2Plus2,onCha
 
     <>
 
-    <label htmlFor='whatIs2Plus2'>What is 2 + 2 : </label>
+        <label htmlFor='whatIs2Plus2'>What is 2 + 2 : </label>
 
-    <input id='idwhatIs2Plus2' type='text' value={whatIs2Plus2} onChange={onChangeWhatIs2Plus2}  />
+        <select  id='idwhatIs2Plus2'  value={whatIs2Plus2} onChange={onChangeWhatIs2Plus2}>
+
+            <option value="Not 4">Not 4</option>
+
+            <option value="4">4</option>
+
+        </select>
     
     </>
 
