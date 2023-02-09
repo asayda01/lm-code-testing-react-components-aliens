@@ -1,4 +1,4 @@
-interface interfaceSpeciesNameProps {
+export interface interfaceSpeciesNameProps {
 
     speciesName:string;
 
@@ -21,7 +21,9 @@ interface interfaceSpeciesNameProps {
     // and pass that function as onChange to any of those kinds of elements!
 }
 
-const SpeciesName : React.FC<interfaceSpeciesNameProps> = ({speciesName,onChangeSpeciesName}) => (
+const SpeciesName : React.FC<interfaceSpeciesNameProps> = ({speciesName,onChangeSpeciesName}) => {
+
+    return (
 
     <>
 
@@ -30,7 +32,8 @@ const SpeciesName : React.FC<interfaceSpeciesNameProps> = ({speciesName,onChange
     <input id='idspeciesName' type='text' value={speciesName} onChange={onChangeSpeciesName}  />
     
     </>
+    );
 
-);
+};
 
 export default SpeciesName; 

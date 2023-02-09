@@ -1,4 +1,4 @@
-interface interfaceWhatIs2Plus2Props {
+export interface interfaceWhatIs2Plus2Props {
 
     whatIs2Plus2:string;
     
@@ -6,7 +6,9 @@ interface interfaceWhatIs2Plus2Props {
 
 }
 
-const WhatIs2Plus2 : React.FC<interfaceWhatIs2Plus2Props> = ({whatIs2Plus2,onChangeWhatIs2Plus2}) => (
+const WhatIs2Plus2 : React.FC<interfaceWhatIs2Plus2Props> = ({whatIs2Plus2,onChangeWhatIs2Plus2}) => {
+
+    return (
 
     <>
 
@@ -22,6 +24,7 @@ const WhatIs2Plus2 : React.FC<interfaceWhatIs2Plus2Props> = ({whatIs2Plus2,onCha
     
     </>
 
-);
+    );
+};
 
 export default WhatIs2Plus2; 

@@ -1,4 +1,4 @@
-interface interfaceSNumberOfBeingsProps {
+export interface interfaceSNumberOfBeingsProps {
 
     numberOfBeings:string;
     
@@ -6,8 +6,10 @@ interface interfaceSNumberOfBeingsProps {
 
 }
 
-const NumberOfBeings : React.FC<interfaceSNumberOfBeingsProps> = ({numberOfBeings,onChangeNumberOfBeings}) => (
-    
+const NumberOfBeings : React.FC<interfaceSNumberOfBeingsProps> = ({numberOfBeings,onChangeNumberOfBeings}) => {
+
+    return (
+
     <>
 
     <label htmlFor='numberOfBeings'>Number of beings: </label>
@@ -16,6 +18,7 @@ const NumberOfBeings : React.FC<interfaceSNumberOfBeingsProps> = ({numberOfBeing
     
     </>
 
-);
+    );
+};
 
 export default NumberOfBeings; 

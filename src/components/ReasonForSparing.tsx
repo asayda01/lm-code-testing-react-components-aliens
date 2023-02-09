@@ -1,4 +1,4 @@
-interface interfaceSReasonForSparingProps {
+export interface interfaceReasonForSparingProps {
 
     reasonForSparing:string;
     
@@ -6,7 +6,9 @@ interface interfaceSReasonForSparingProps {
 
 }
 
-const ReasonForSparing : React.FC<interfaceSReasonForSparingProps> = ({reasonForSparing,onChangeReasonForSparing}) => (
+const ReasonForSparing : React.FC<interfaceReasonForSparingProps> = ({reasonForSparing,onChangeReasonForSparing}) => {
+
+    return (
 
     <>
 
@@ -16,6 +18,7 @@ const ReasonForSparing : React.FC<interfaceSReasonForSparingProps> = ({reasonFor
     
     </>
 
-);
+    );
+};
 
 export default ReasonForSparing; 

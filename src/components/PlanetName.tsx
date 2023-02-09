@@ -1,4 +1,4 @@
-interface interfaceSPlanetNameProps {
+export interface interfaceSPlanetNameProps {
 
     planetName:string;
     
@@ -6,7 +6,9 @@ interface interfaceSPlanetNameProps {
 
 }
 
-const PlanetName : React.FC<interfaceSPlanetNameProps> = ({planetName,onChangePlanetName}) => (
+const PlanetName : React.FC<interfaceSPlanetNameProps> = ({planetName,onChangePlanetName}) => {
+
+    return (
 
     <>
 
@@ -16,6 +18,8 @@ const PlanetName : React.FC<interfaceSPlanetNameProps> = ({planetName,onChangePl
     
     </>
 
-);
+    );
+};
+
 
 export default PlanetName; 
