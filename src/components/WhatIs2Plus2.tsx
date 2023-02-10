@@ -1,3 +1,6 @@
+import { useState } from "react";
+import ErrorMessage from "./ErrorMessage";
+
 export interface interfaceWhatIs2Plus2Props {
 
     whatIs2Plus2:string;
@@ -7,6 +10,15 @@ export interface interfaceWhatIs2Plus2Props {
 }
 
 const WhatIs2Plus2 : React.FC<interfaceWhatIs2Plus2Props> = ({whatIs2Plus2,onChangeWhatIs2Plus2}) => {
+    
+    const [errorMessage , setErrorMessage] = useState< string | undefined >('');
+    const validate : ( value:string ) => string | undefined = ( value ) => {
+        if ( value === "Not 4" ){
+            return 'What is 2 + 2: "4" must be selected. Selecting "Not 4" should display an error.'
+        };
+        
+        return undefined;
+    };
 
     return (
 
@@ -14,13 +26,22 @@ const WhatIs2Plus2 : React.FC<interfaceWhatIs2Plus2Props> = ({whatIs2Plus2,onCha
 
         <label htmlFor='whatIs2Plus2'>What is 2 + 2 : </label>
 
-        <select  id='idwhatIs2Plus2'  value={whatIs2Plus2} onChange={onChangeWhatIs2Plus2}>
-
+        <select  id='idwhatIs2Plus2'  
+                 value={whatIs2Plus2}
+                 onChange={ (event) => {
+                                        const errorMessage = validate(event.target.value);
+                                        setErrorMessage(errorMessage);
+                                        onChangeWhatIs2Plus2(event); 
+                                        }
+                          }
+        >
+            
             <option value="Not 4">Not 4</option>
-
             <option value="4">4</option>
 
         </select>
+
+        < ErrorMessage errorMessage = {errorMessage} />
     
     </>
 
