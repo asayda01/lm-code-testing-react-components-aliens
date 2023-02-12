@@ -7,14 +7,14 @@ export interface interfaceReasonForSparingProps {
     
     onChangeReasonForSparing:(event:React.ChangeEvent<HTMLInputElement>)=>void;
 
-}
+};
 
 const ReasonForSparing : React.FC<interfaceReasonForSparingProps> = ({reasonForSparing,onChangeReasonForSparing}) => {
 
     const [errorMessage , setErrorMessage] = useState< string | undefined >('');
     const validate : ( value:string ) => string | undefined = ( value ) => {
         if ( (value.length<17 || value.length>153) ) {
-            return "Reason for sparing: Must be between 17 and 153 characters."
+            return "ERROR - Reason for sparing: Must be between 17 and 153 characters."
         };
         
         return undefined;

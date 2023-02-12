@@ -7,14 +7,14 @@ export interface interfaceWhatIs2Plus2Props {
     
     onChangeWhatIs2Plus2:(event:React.ChangeEvent<HTMLSelectElement>)=>void;
 
-}
+};
 
 const WhatIs2Plus2 : React.FC<interfaceWhatIs2Plus2Props> = ({whatIs2Plus2,onChangeWhatIs2Plus2}) => {
     
     const [errorMessage , setErrorMessage] = useState< string | undefined >('');
     const validate : ( value:string ) => string | undefined = ( value ) => {
         if ( value === "Not 4" ){
-            return 'What is 2 + 2: "4" must be selected. Selecting "Not 4" should display an error.'
+            return 'ERROR - Correct answer is "4". Please reconsider and then select the correct answer!'
         };
         
         return undefined;

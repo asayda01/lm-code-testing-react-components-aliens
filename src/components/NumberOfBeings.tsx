@@ -7,14 +7,14 @@ export interface interfaceSNumberOfBeingsProps {
     
     onChangeNumberOfBeings:(event:React.ChangeEvent<HTMLInputElement>)=>void;
 
-}
+};
 
 const NumberOfBeings : React.FC<interfaceSNumberOfBeingsProps> = ({numberOfBeings,onChangeNumberOfBeings}) => {
 
     const [errorMessage , setErrorMessage] = useState< string | undefined >('');
     const validate : ( value:string ) => string | undefined = ( value ) => {
         if ( !( Number(value) > 999999999) || (!(/^[0-9]*$/).test(value)) ){
-            return "Number of beings: Numbers ONLY. Must be at least 1,000,000,000."
+            return "ERROR - Number of beings: Numbers ONLY. Must be at least 1,000,000,000."
         };
         
         return undefined;

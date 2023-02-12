@@ -7,14 +7,14 @@ export interface interfaceSpeciesNameProps {
 
     onChangeSpeciesName:(event:React.ChangeEvent<HTMLInputElement>)=>void;
 
-}
+};
 
 const SpeciesName : React.FC<interfaceSpeciesNameProps> = ({speciesName,onChangeSpeciesName}) => {
 
     const [errorMessage , setErrorMessage] = useState< string | undefined >('');
     const validate : ( value:string ) => string | undefined = ( value ) => {
         if ( (value.length<3 || value.length>23) || (!(/^[a-zA-Z]*$/).test(value)) ){
-            return "Species Name: Must be between 3 and 23 characters. No numbers or special characters allowed!"
+            return "ERROR - Species Name: Must be between 3 and 23 characters. No numbers or special characters allowed!"
         };
 
         return undefined;

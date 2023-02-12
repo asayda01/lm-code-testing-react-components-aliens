@@ -7,14 +7,14 @@ export interface interfaceSPlanetNameProps {
     
     onChangePlanetName:(event:React.ChangeEvent<HTMLInputElement>)=>void;
 
-}
+};
 
 const PlanetName : React.FC<interfaceSPlanetNameProps> = ({planetName,onChangePlanetName}) => {
 
     const [errorMessage , setErrorMessage] = useState< string | undefined >('');
     const validate : ( value:string ) => string | undefined = ( value ) => {
-        if ( (value.length<2 || value.length>49) || (!(/^[a-zA-Z0-9]*$/).test(value)) ){
-            return "Planet Name: Must be between 2 and 49 characters. Numbers are allowed, but no special characters."
+        if ( (value.length<2 || value.length>49) || (!(/^[a-zA-Z0-9\s]*$/).test(value)) ){
+            return "ERROR - Planet Name: Must be between 2 and 49 characters. Numbers are allowed, but no special characters."
         };
         
         return undefined;

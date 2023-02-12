@@ -9,7 +9,7 @@ import ReasonForSparing from './ReasonForSparing';
 
 const W12MForm = () => {
 
-	const [speciesName,setSpeciesName] 		  		= useState<string>('Humans');
+	const [speciesName,setSpeciesName] 		  		= useState<string>('Human');
 	const [planetName,setPlanetName]  		  		= useState<string>('World');
 	const [numberOfBeings,setNumberOfBeings]  		= useState<string>('8014725546');
 	const [whatIs2Plus2,setwhatIs2Plus2]  			= useState<string>('Not 4');
@@ -17,11 +17,12 @@ const W12MForm = () => {
 
 	const formSubmitter = (event:React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
-		console.log(	`speciesName: ${speciesName},
-					 	planetName: ${planetName},
-					    numberOfBeings:${numberOfBeings}, 
-					    whatIs2Plus2: ${whatIs2Plus2},
-					    reasonForSparing: ${reasonForSparing}`);
+		console.log(`
+			speciesName: ${speciesName},\n
+			planetName: ${planetName},\n
+			numberOfBeings:${numberOfBeings},\n
+			whatIs2Plus2: ${whatIs2Plus2}, \n
+			reasonForSparing: ${reasonForSparing}`);
 	};
 
 	return (
